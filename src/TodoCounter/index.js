@@ -1,0 +1,33 @@
+import React from "react";
+import "./TodoCounter.css";
+import { TodoContext } from "../TodoContext";
+
+function TodoCounter() {
+
+    const {
+        completedTodos,
+        totalTodos,
+        loading
+    } = React.useContext(TodoContext);
+
+    let counterMessage = (
+        <>
+            You have completed <span>{completedTodos}</span> of <span>{totalTodos}</span> TODO'S 
+        </>
+    )
+
+    if (completedTodos > 0 && completedTodos === totalTodos) {
+        counterMessage = "Congratulations!!! You completed all TODO's";
+    } else if (loading) {
+        counterMessage = '';
+    }
+
+    return (
+        <h1 className="TodoCounter">
+            {counterMessage}
+        </h1>
+    );
+
+}
+
+export { TodoCounter };
