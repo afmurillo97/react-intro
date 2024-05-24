@@ -13,7 +13,7 @@ function TodoSearch() {
   let input = (
       <input 
         className='TodoSearch' 
-        placeholder="Pill Onion" 
+        placeholder='Sweep from the garden' 
         value={searchValue}
         onChange={(event) => {
           setSearchValue(event.target.value);
