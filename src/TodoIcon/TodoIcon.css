@@ -1,5 +1,8 @@
+span {
+    cursor: 'pointer';
+}
+
 .Icon {
-    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
