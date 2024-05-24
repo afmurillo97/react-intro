@@ -11,6 +11,7 @@ function TodoIcon({ type, color, onClick }) {
     return (
         <span
           className={`Icon-container Icon-container-${type}`}
+          style={{cursor: 'pointer'}}
           onClick={onClick}
         >
           {iconTypes[type](color)}
