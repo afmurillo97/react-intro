@@ -31,39 +31,51 @@ function App() {
 
   return (
     <>
-      <TodoHeader>
+      <TodoHeader loading={loading}>
         <TodoCounter 
           totalTodos={totalTodos}
           completedTodos={completedTodos}
-          loading={loading}
         />
         <TodoSearch
           searchValue={searchValue}
           setSearchValue={setSearchValue}
-          loading={loading}
         />
       </TodoHeader>
 
       {loading && <TodosLoading/>}
       {error && <TodosError/>}
 
-      <TodoList>
-      {!loading && searchedTodos.length === 0 && 
-        <EmptyTodos 
-          totalTodos={totalTodos} 
-          searchValue={searchValue}
-        />
-      }
-
-      {searchedTodos.map((todo, i) => 
-        <TodoItem 
-          key={i} 
-          text={todo.text} 
-          completed={todo.completed}
-          onComplete={() => completeTodo(i)}
-          onDelete={() => deleteTodo(i)}
-        />
-      )}
+      <TodoList
+        error={error}
+        loading={loading}
+        searchedTodos={searchedTodos}
+        searchValue={searchValue}
+        totalTodos={totalTodos}
+        onError={ () => <TodosError /> }
+        onLoading={ () => <TodosLoading /> }
+        onEmptyTodos={ () => <EmptyTodos /> }
+        onEmptySearchResults={ 
+          (searchText) => <h1 className='TodoCounter'>No results for "{searchText}"</h1>
+        }
+        render={ (todo, i) => (
+          <TodoItem 
+            key={i} 
+            text={todo.text} 
+            completed={todo.completed}
+            onComplete={() => completeTodo(i)}
+            onDelete={() => deleteTodo(i)}
+          />
+        ) }
+      >
+        {/* { (todo, i) => (
+          <TodoItem 
+            key={i} 
+            text={todo.text} 
+            completed={todo.completed}
+            onComplete={() => completeTodo(i)}
+            onDelete={() => deleteTodo(i)}
+          />
+        ) } */}
       </TodoList>
 
       <CreateTodoButton setOpenModal={setOpenModal}/>
