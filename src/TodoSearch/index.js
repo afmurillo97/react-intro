@@ -1,6 +1,5 @@
 import React from 'react';
 import './TodoSearch.css'
-import { TodoContext } from '../TodoContext';
 
 function TodoSearch({ searchValue, setSearchValue, loading }) {
 

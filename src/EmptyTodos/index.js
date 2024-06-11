@@ -1,13 +1,7 @@
 import React from 'react';
 import './EmptyTodos.css';
-import { TodoContext } from '../TodoContext';
 
-function EmptyTodos() {
-
-  const {
-    totalTodos,
-    searchValue
-  } = React.useContext(TodoContext);
+function EmptyTodos({ totalTodos, searchValue }) {
 
   let emptyMessage = ( <> Make your first todo... </> );
 
