@@ -26,7 +26,7 @@
 <br />
 <div align="center">
   <a href="https://afmurillo97.github.io/react-intro" target="_blank">
-    <img src="public/screenshots/Screenshot_1.png" alt="Logo" width="200" height="200">
+    <img src="public/screenshots/Screenshot_1.png" alt="Logo" width="600">
   </a>
 
   <h3 align="center">React.js TODO Machine Proyect</h3>
