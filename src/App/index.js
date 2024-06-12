@@ -11,6 +11,7 @@ import { TodoHeader } from '../TodoHeader';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from "../Modal";
 import { TodoForm } from "../TodoForm";
+import { ChangeAlert } from '../ChangeAlert';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
     completedTodos,
     searchValue,
     setSearchValue,
+    sincronizeTodos,
   } = useTodos();
 
   return (
@@ -78,7 +80,7 @@ function App() {
         ) } */}
       </TodoList>
 
-      <CreateTodoButton setOpenModal={setOpenModal}/>
+      <CreateTodoButton setOpenModal={setOpenModal} loading={loading}/>
 
       {openModal && (
         <Modal>
@@ -89,6 +91,7 @@ function App() {
         </Modal>
       )}
 
+      <ChangeAlert sincronize={sincronizeTodos}/>
     </>
   );
   
