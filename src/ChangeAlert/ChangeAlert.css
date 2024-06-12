@@ -1,0 +1,39 @@
+.TodoReload {
+	width:90%;
+	max-width:300px;
+	background-color:#fff;
+	padding:33px 40px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column
+}
+
+.TodoReload-label {
+	text-align:center;
+	font-weight:700;
+	font-size:20px;
+	color:#1e1e1f;
+	margin-bottom:26px
+}
+
+.TodoReload-button {
+	cursor:pointer;
+	display:inline-block;
+	font-size:20px;
+	color:#202329;
+	font-weight:400;
+	width:120px;
+	height:48px;
+	border-radius:2px;
+	border:none;
+	font-family: Montserrat, sans-serif;
+	transition: background-color 0.3s, border 0.3s;
+	background:#61dafa;
+	box-shadow:0 5px 25px rgba(97,218,250,.5)
+}
+
+.TodoReload-button:hover {
+	background-color: #f0f0f0;
+	border: 2px solid #61dafa;
+}
